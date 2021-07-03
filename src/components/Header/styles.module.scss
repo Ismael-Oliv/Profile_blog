@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  width: 100%;
+}
+
+.nav {
+  width: 100%;
+  border-bottom: 1px solid rgba(219, 219, 219, 1);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.ul {
+  list-style-type: none;
+  display: flex;
+
+  li {
+    text-decoration: none;
+    padding: 20px;
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
