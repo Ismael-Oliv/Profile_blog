@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 export function Header() {
@@ -6,16 +7,24 @@ export function Header() {
       <nav className={styles.nav}>
         <ul className={styles.ul}>
           <li>
-            <a href="http://localhost:3000/">Home</a>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/profile">Profile</a>
+            <Link href="/profile">
+              <a>Profile</a>
+            </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/articles">Articles</a>
+            <Link href="/articles">
+              <a>Articles</a>
+            </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/contacts">Contacts</a>
+            <Link href="/contacts">
+              <a>Contacts</a>
+            </Link>
           </li>
         </ul>
       </nav>

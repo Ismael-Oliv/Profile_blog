@@ -5,21 +5,25 @@ import styles from "./styles.module.scss";
 export function Profile() {
   return (
     <aside className={styles.Container}>
-      <figure className={styles.ImageContainer}>
-        <Image src={profilePicture} alt="profile picture" />
-        <p>Ismael Oliveira</p>
-      </figure>
+      <Image
+        className={styles.ImageContainer}
+        src={profilePicture}
+        alt="profile picture"
+      />
+      <p>Ismael Oliveira</p>
+
       <main className={styles.Content}>
         <section className={styles.Formacao}>
           <header className={styles.TitleFormacao}>
             <span>Formação</span>
           </header>
           <p>
-            <strong>Curso:</strong>Analise e desenvolvimento de sistemas
+            <strong>Curso:</strong>
+            <span>Analise e desenv. de sistemas</span>
           </p>
           <p>
             <strong>Instituição:</strong>
-            Faculdade de Tecnologia Impacta
+            <span>Fac. de Tecnologia Impacta</span>
           </p>
         </section>
         <section className={styles.OutrosCursos}>
@@ -27,18 +31,33 @@ export function Profile() {
             <span>Outros cursos</span>
           </header>
           <p>
-            <strong>Curso:</strong>GoStack e Ignite
+            <strong>Curso:</strong>
+            <span>GoStack e Ignite</span>
           </p>
           <p>
-            <strong>Instituição:</strong> Rocketseat
+            <strong>Instituição:</strong>
+            <a href="https://rocketseat.com.br/" target="blank">
+              Rocketseat
+            </a>
           </p>
         </section>
-        <p>
-          <strong>Linkedin:</strong> Linkedin
-        </p>
-        <p>
-          <strong>Github:</strong> Github
-        </p>
+        <section>
+          <p>
+            <strong>Linkedin:</strong>
+            <a
+              href="https://www.linkedin.com/in/ismael-oliveira-4ba833146/"
+              target="blank"
+            >
+              Linkedin
+            </a>
+          </p>
+          <p>
+            <strong>Github:</strong>
+            <a href="https://github.com/Ismael-Oliv" target="blank">
+              Github
+            </a>
+          </p>
+        </section>
       </main>
     </aside>
   );

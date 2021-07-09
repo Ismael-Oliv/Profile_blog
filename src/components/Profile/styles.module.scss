@@ -11,13 +11,13 @@
 .ImageContainer {
   display: flex;
   flex-direction: column;
-  width: 60%;
+
   align-items: center;
   justify-content: center;
   height: 200px;
   border-bottom: 1px solid rgba(219, 219, 219, 1);
 
-  img {
+  &.style {
     width: 100px;
     height: 200px;
     border-radius: 50%;

@@ -1,18 +1,23 @@
 import { GetStaticProps } from "next";
-import { Client } from "@notionhq/client";
+import Prismic from "@prismicio/client";
+import { getPrismicClient } from "../services/prismic";
 
 import { Profile } from "../components/Profile";
-import { Content } from "../components/Content";
+import { Category } from "../components/Category";
 
 import styles from "../../styles/home.module.scss";
 
-import { ContentFromNotionProps } from "../types/contents.types";
-
-interface IHomeProps {
-  content: ContentFromNotionProps[];
+interface ICategory {
+  id: string;
+  slug: string;
+  title: string;
 }
 
-export default function Home({ content }: IHomeProps) {
+interface IHomeProps {
+  Categories: ICategory[];
+}
+
+export default function Home({ Categories }: IHomeProps) {
   return (
     <div className={styles.container}>
       <main className="main">
@@ -20,8 +25,8 @@ export default function Home({ content }: IHomeProps) {
           <div>
             <Profile />
             <main className={styles.feed}>
-              {content.map((page) => {
-                return <Content key={page.id} content={page} />;
+              {Categories.map((category) => {
+                return <Category key={category.id} Category={category} />;
               })}
             </main>
           </div>
@@ -32,23 +37,25 @@ export default function Home({ content }: IHomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const notion = new Client({
-    auth: process.env.SECRET_NOTION_API,
-  });
+  const prismic = getPrismicClient();
+  const response = await prismic.query(
+    [Prismic.predicates.at("document.type", "categories")],
+    {
+      fetch: ["Categories.title"],
+      pageSize: 100,
+    }
+  );
 
-  const response = await notion.databases.query({
-    database_id: process.env.SECRET_NOTION_DATABASE_ID,
-  });
-
-  const content: any[] = [];
-  response.results.map((page) => {
-    content.push({ ...page, parent: "" });
+  const Categories = response.results.map((cont) => {
+    return {
+      id: cont.id,
+      slug: cont.uid,
+      title: cont.uid[0].toUpperCase() + cont.uid.substr(1),
+    };
   });
 
   return {
-    props: {
-      content,
-    },
+    props: { Categories },
     revalidate: 60 * 60 * 24, // 24 horas
   };
 };
