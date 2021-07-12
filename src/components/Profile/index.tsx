@@ -5,13 +5,16 @@ import styles from "./styles.module.scss";
 export function Profile() {
   return (
     <aside className={styles.Container}>
-      <Image
-        className={styles.ImageContainer}
-        src={profilePicture}
-        alt="profile picture"
-      />
-      <p>Ismael Oliveira</p>
-
+      <div className={styles.Image}>
+        <figure className={styles.ImageContainer}>
+          <Image
+            src={profilePicture}
+            alt="profile picture"
+            className={styles.img}
+          />
+          <p>Ismael Oliveira</p>
+        </figure>
+      </div>
       <main className={styles.Content}>
         <section className={styles.Formacao}>
           <header className={styles.TitleFormacao}>
@@ -48,13 +51,13 @@ export function Profile() {
               href="https://www.linkedin.com/in/ismael-oliveira-4ba833146/"
               target="blank"
             >
-              Linkedin
+              Acessar
             </a>
           </p>
           <p>
             <strong>Github:</strong>
             <a href="https://github.com/Ismael-Oliv" target="blank">
-              Github
+              Acessar
             </a>
           </p>
         </section>
