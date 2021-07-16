@@ -5,16 +5,11 @@ import styles from "./styles.module.scss";
 export function Profile() {
   return (
     <aside className={styles.Container}>
-      <div className={styles.Image}>
-        <figure className={styles.ImageContainer}>
-          <Image
-            src={profilePicture}
-            alt="profile picture"
-            className={styles.img}
-          />
-          <p>Ismael Oliveira</p>
-        </figure>
-      </div>
+      <figure className={styles.ImageContainer}>
+        <img src="images/profile_picture.jpeg" alt="Profile" />
+        <p>Ismael Oliveira</p>
+      </figure>
+
       <main className={styles.Content}>
         <section className={styles.Formacao}>
           <header className={styles.TitleFormacao}>
