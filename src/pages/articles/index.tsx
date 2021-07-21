@@ -23,7 +23,7 @@ export default function Articles({ posts }: IPostsProps) {
     <main className={styles.main}>
       <section className={styles.section}>
         {posts.map((post) => (
-          <Link key={post.id} href={`articles/${post.slug}`}>
+          <Link key={post.id} href={`/posts/articles/${post.slug}`}>
             <a className={styles.article}>
               <header>
                 <h1>{post.title}</h1>
