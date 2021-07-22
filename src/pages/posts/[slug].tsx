@@ -3,6 +3,7 @@ import { GetServerSideProps } from "next";
 import Link from "next/link";
 import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../services/prismic";
+import { NoContent } from "../../components/NoContent"
 
 import styles from "./posts.module.scss";
 
@@ -22,19 +23,23 @@ export default function Posts({ posts }: IPostsProps) {
   return (
     <main className={styles.main}>
       <section className={styles.section}>
-        {posts.map((post) => (
-          <Link key={post.id} href={`articles/${post.slug}`}>
-            <a className={styles.article}>
-              <header>
-                <h1>{post.title}</h1>
-                <time>{post.updated_at}</time>
-              </header>
-              <article>
-                <p>{post.excerpt}</p>
-              </article>
-            </a>
-          </Link>
-        ))}
+
+        {posts[0] ?
+          posts.map((post) => (
+            <Link key={post.id} href={`articles/${post.slug}`}>
+              <a className={styles.article}>
+                <header>
+                  <h1>{post.title}</h1>
+                  <time>{post.updated_at}</time>
+                </header>
+                <article>
+                  <p>{post.excerpt}</p>
+                </article>
+              </a>
+            </Link>
+          )):
+          <NoContent /> 
+        }
       </section>
     </main>
   );
