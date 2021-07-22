@@ -8,22 +8,22 @@ export function Header() {
         <ul className={styles.ul}>
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a>Pagina Inicial</a>
             </Link>
           </li>
           <li>
             <Link href="/profile">
-              <a>Profile</a>
+              <a>Perfil</a>
             </Link>
           </li>
           <li>
             <Link href="/articles">
-              <a>Articles</a>
+              <a>Artigos</a>
             </Link>
           </li>
           <li>
             <Link href="/contacts">
-              <a>Contacts</a>
+              <a>Contate-me</a>
             </Link>
           </li>
         </ul>

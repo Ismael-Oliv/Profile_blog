@@ -13,6 +13,11 @@
     margin: 0 auto;
     padding: 0 20px;
 
+    @media (max-width : 720px) {
+      display: flex;
+      flex-direction: column;
+    }
+
     aside {
       display: flex;
       flex-direction: column;
