@@ -1,0 +1,96 @@
+.content {
+  display: flex;
+  max-width: 720px;
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+  font-family: "Roboto";
+
+  padding: 20px;
+
+  form {
+    h1 {
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #dbdbdb;
+      align-self: center;
+      padding: 0 5px;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    width: 426px;
+
+    margin: 2rem auto;
+    padding: 2rem;
+
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    background-color: white;
+  }
+}
+
+.title {
+  margin: 1rem 0;
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 5px;
+  }
+  input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+  }
+}
+
+.mensagem {
+  margin: 1rem 0;
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 5px;
+  }
+  textarea {
+    min-width: 360px;
+    max-width: 100%;
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 1rem;
+
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+  }
+}
+
+.email {
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 5px;
+  }
+
+  input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+  }
+}
+
+.button {
+  display: flex;
+
+  button {
+    cursor: pointer;
+    margin: 0 auto;
+    width: 200px;
+    padding: 1rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+  }
+}
